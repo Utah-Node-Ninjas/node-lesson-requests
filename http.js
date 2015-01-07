@@ -1,8 +1,7 @@
-// GET
-
 var http = require('http');
+// Documentation: http://nodejs.org/api/http.html
 
-//The url we want is: 'www.random.org/integers/?num=1&min=1&max=10&col=1&base=10&format=plain&rnd=new'
+// GET
 var options = {
   host: 'httpbin.org',
   path: '/get?hello=world'
@@ -18,7 +17,7 @@ callback = function(response) {
 
   //the whole response has been recieved, so we just print it out here
   response.on('end', function() {
-    console.log('GET response', str);
+    console.log('GET response', str, typeof str);
   });
 }
 
@@ -42,7 +41,7 @@ callback = function(response) {
   });
 
   response.on('end', function() {
-    console.log('POST response',str);
+    console.log('POST response',str, typeof str);
   });
 }
 
